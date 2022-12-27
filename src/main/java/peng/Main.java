@@ -1,6 +1,6 @@
-package org.peng;
+package peng;
 
-import javax.activation.MailcapCommandMap;
+//import javax.activation.MailcapCommandMap;
 import java.io.IOException;
 import java.net.URL;
 import java.util.Properties;
@@ -22,6 +22,9 @@ public class Main {
 
         java.io.InputStream fis = this.getClass().getResourceAsStream("/it.properties");
         Properties pro = new Properties();
+
+        org.apache.logging.log4j.Logger log = org.apache.logging.log4j.LogManager.getLogger(this.getClass());
+        log.debug("log debug");
         try {
             pro.load(fis);
             String me = pro.getProperty("me");
